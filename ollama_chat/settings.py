@@ -26,12 +26,12 @@ SECRET_KEY = 'django-insecure-_tni!2s&@zr)dg@ty%grtc^uz^84#p(&h_mz(hiwcm1=xv!8*a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'yourdomain.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'sortify-ovdv.onrender.com']
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
     'http://127.0.0.1:8000',
-    'https://yourdomain.com',
+    'https://sortify-ovdv.onrender.com',
 ]
 
 # Application definition
