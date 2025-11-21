@@ -104,19 +104,34 @@ WSGI_APPLICATION = "ollama_chat.wsgi.application"
 # ------------------------------------------------------------------------------
 # Prefer DATABASE_URL (Render will inject this when DB is linked). If not present,
 # fall back to local sqlite for development.
+# Allows forcing sqlite regardless of DATABASE_URL (useful when you cannot edit Render links)
+FORCE_SQLITE = os.environ.get("FORCE_SQLITE", "False") == "True"
+
 DATABASE_URL = os.environ.get("DATABASE_URL")
-if DATABASE_URL:
-    DATABASES = {
-        "default": dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=not DEBUG)
-    }
-else:
+
+if FORCE_SQLITE:
+    # Use local sqlite (ephemeral on Render) when forced
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
-
+else:
+    # Prefer DATABASE_URL (Postgres) when present, otherwise fallback to sqlite for local dev
+    if DATABASE_URL:
+        DATABASES = {
+            "default": dj_database_url.parse(
+                DATABASE_URL, conn_max_age=600, ssl_require=not (os.environ.get("DEBUG", "False") == "True")
+            )
+        }
+    else:
+        DATABASES = {
+            "default": {
+                "ENGINE": "django.db.backends.sqlite3",
+                "NAME": BASE_DIR / "db.sqlite3",
+            }
+        }
 # ------------------------------------------------------------------------------
 # Password validation
 # ------------------------------------------------------------------------------
