@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: ollama-chat-web
+    env: python
+    branch: main
+    plan: free
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    startCommand: gunicorn ollama_chat.wsgi --log-file -
+    releaseCommand: python manage.py migrate --noinput

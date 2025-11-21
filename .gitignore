@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# envs
+env/
+venv/
+ENV/
+.venv/
+
+# static collected
+staticfiles/
+*.pyc
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
