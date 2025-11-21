@@ -1,0 +1,26 @@
+Welcome to your technical interview for the C Developer role. To start, can you describe a C project you've worked on and what your main responsibilities were?
+Welcome. To begin, please tell me about a C project you are proud of and the most challenging part of its development.
+To get started, can you walk me through a C program you wrote, and what problem it solved?
+
+Can you explain the difference between a pointer and a regular variable in C?
+What is a pointer, and how does it differ in memory and usage from a standard integer variable?
+Describe the concept of a pointer in C and why it's a fundamental feature of the language.
+
+What is a "dangling pointer," and what is one common way they are created?
+How do dangling pointers occur, and why are they considered a dangerous bug in C programming?
+Can you give me an example of a code snippet that would result in a dangling pointer?
+
+Let's talk about memory. Can you explain the difference between `malloc` and `calloc`?
+In C's dynamic memory allocation, what is the functional difference between `malloc` and `calloc`, and when would you choose one over the other?
+
+What is a "memory leak"? What is the primary C function you must use to prevent them, and how is it used?
+Can you describe what a memory leak is in the context of C, and what the consequences of a serious leak are?
+
+Let's talk about data structures. How would you implement a simple singly-linked list in C? You don't need to write code, just describe the `struct` or `structs` you would use.
+Describe the C `struct` you would define to represent a single node in a singly-linked list.
+
+What is the purpose of the `volatile` keyword in C, and how does it differ from `const`?
+When would you absolutely need to use the `volatile` keyword? Give me a practical example.
+
+Final technical question. What is the purpose of bitwise operators, like `&` and `|`? Give me a practical example of using one.
+Can you explain what bitwise operators are used for? For example, how would you use one to check if a specific bit is set in an integer?

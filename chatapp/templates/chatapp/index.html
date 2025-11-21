@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'logo.jpg' %}">
+    <title>Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            background: white;
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 72px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+        
+        .tagline {
+            font-size: 20px;
+            color: #6b7280;
+            margin-bottom: 48px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 48px 0;
+        }
+        
+        .feature {
+            background: #f9fafb;
+            padding: 24px;
+            border-radius: 16px;
+            border: 2px solid #e5e7eb;
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+        
+        .feature h3 {
+            font-size: 18px;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+        
+        .feature p {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(102, 126, 234, 0.5);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #f0f4ff;
+        }
+        
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-icon"><img src="{% static 'logo.jpg' %}" width="100px" height="100px" alt=""></div>
+        <h1>sortify</h1>
+        <p class="tagline">Advanced AI-powered technical interviews with real-time proctoring</p>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🎤</div>
+                <h3>Voice Interviews</h3>
+                <p>Speak your answers naturally with advanced speech recognition</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📹</div>
+                <h3>AI Proctoring</h3>
+                <p>Advanced gaze detection and head pose tracking for interview integrity</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Instant Reports</h3>
+                <p>Get detailed performance analysis and feedback immediately</p>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <a href="{% url 'login_view' %}" class="btn btn-primary">Sign In</a>
+            <a href="{% url 'register_view' %}" class="btn btn-secondary">Create Account</a>
+        </div>
+    </div>
+</body>
+</html>
