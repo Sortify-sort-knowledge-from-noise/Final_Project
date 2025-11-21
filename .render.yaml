@@ -6,4 +6,6 @@ services:
     plan: free
     buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
     startCommand: gunicorn ollama_chat.wsgi --log-file -
+    # releaseCommand runs AFTER build and BEFORE the service receives traffic.
+    # For ephemeral sqlite this will create db.sqlite3 in the container filesystem.
     releaseCommand: python manage.py migrate --noinput
